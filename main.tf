@@ -17,7 +17,7 @@ resource "time_sleep" "this" {
 
 locals {
   partition = data.aws_partition.current.partition
-  region    = data.aws_region.current.name
+  region    = data.aws_region.current.id
 
   # Threads the sleep resource into the module to make the dependency
   # tflint-ignore: terraform_unused_declarations
@@ -43,7 +43,7 @@ locals {
 
 module "networkfirewall" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_networkfirewall
 
@@ -168,7 +168,7 @@ locals {
 
 module "cloudwatchlogs" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_cloudwatchlogs
 
@@ -293,7 +293,7 @@ locals {
 
 module "kinesis" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_kinesis
 
@@ -416,7 +416,7 @@ locals {
 
 module "secretsmanager" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_secretsmanager
 
@@ -514,7 +514,7 @@ locals {
 
 module "route53resolver" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_route53resolver
 
@@ -612,7 +612,7 @@ locals {
 
 module "route53" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_route53
 
@@ -710,7 +710,7 @@ locals {
 
 module "organizations" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_organizations
 
@@ -808,7 +808,7 @@ locals {
 
 module "mq" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_mq
 
@@ -906,7 +906,7 @@ locals {
 
 module "cloudwatch" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_cloudwatch
 
@@ -1004,7 +1004,7 @@ locals {
 
 module "keyspaces" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_keyspaces
 
@@ -1102,7 +1102,7 @@ locals {
 
 module "kafka" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_kafka
 
@@ -1200,7 +1200,7 @@ locals {
 
 module "efs" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_efs
 
@@ -1298,7 +1298,7 @@ locals {
 
 module "ecs" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_ecs
 
@@ -1396,7 +1396,7 @@ locals {
 
 module "cloudtrail" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_cloudtrail
 
@@ -1494,7 +1494,7 @@ locals {
 
 module "cloudfront" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_cloudfront
 
@@ -1592,7 +1592,7 @@ locals {
 
 module "applicationautoscaling" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_applicationautoscaling
 
@@ -1690,7 +1690,7 @@ locals {
 
 module "sagemaker" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_sagemaker
 
@@ -1788,7 +1788,7 @@ locals {
 
 module "memorydb" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_memorydb
 
@@ -1885,7 +1885,7 @@ locals {
 
 module "opensearchservice" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_opensearchservice
 
@@ -1982,7 +1982,7 @@ locals {
 
 module "ecr" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_ecr
 
@@ -2079,7 +2079,7 @@ locals {
 
 module "sns" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_sns
 
@@ -2176,7 +2176,7 @@ locals {
 
 module "sqs" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_sqs
 
@@ -2273,7 +2273,7 @@ locals {
 
 module "lambda" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_lambda
 
@@ -2406,7 +2406,7 @@ locals {
 
 module "iam" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_iam
 
@@ -2582,7 +2582,7 @@ locals {
 
 module "ec2" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_ec2
 
@@ -2680,7 +2680,7 @@ locals {
 
 module "eks" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_eks
 
@@ -2799,7 +2799,7 @@ locals {
 
 module "kms" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_kms
 
@@ -2928,7 +2928,7 @@ locals {
 
 module "acm" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_acm
 
@@ -3052,7 +3052,7 @@ locals {
 
 module "apigatewayv2" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_apigatewayv2
 
@@ -3151,7 +3151,7 @@ locals {
 
 module "dynamodb" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_dynamodb
 
@@ -3249,7 +3249,7 @@ locals {
 
 module "s3" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_s3
 
@@ -3347,7 +3347,7 @@ locals {
 
 module "elasticache" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_elasticache
 
@@ -3445,7 +3445,7 @@ locals {
 
 module "rds" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_rds
 
@@ -3543,7 +3543,7 @@ locals {
 
 module "prometheusservice" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_prometheusservice
 
@@ -3665,7 +3665,7 @@ locals {
 
 module "emrcontainers" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_emrcontainers
 
@@ -3851,7 +3851,7 @@ locals {
 
 module "sfn" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_sfn
 
@@ -3974,7 +3974,7 @@ locals {
 
 module "eventbridge" {
   source  = "aws-ia/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  version = ">= 1.3.0"
 
   create = var.enable_eventbridge
 
